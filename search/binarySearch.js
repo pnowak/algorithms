@@ -23,6 +23,10 @@ export function binarySearch(array, item) {
 }
 
 export function binarySearchRecursive(array, item, low = 0, high = array.length - 1) {
+	if (low > high) {
+		return -1;
+	}
+
 	let mid = Math.floor((low + high) / 2);
 	let guess = array[mid];
 
@@ -36,7 +40,5 @@ export function binarySearchRecursive(array, item, low = 0, high = array.length 
 	}  else if (guess < item) {
 		binarySearchRec(array, item, mid + 1, high);
 
-	} else {
-		return -1;
 	}
 }
