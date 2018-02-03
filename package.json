@@ -1,0 +1,39 @@
+{
+  "name": "algorithms",
+  "version": "0.1.0",
+  "description": "Algorithms samples",
+  "author": "Piotr Nowak",
+  "license": "MIT",
+  "keywords": [
+    "algoritms",
+    "data structure"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pnowak/algorithms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pnowak/algorithms/issues"
+  },
+  "main": "index.js",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^6.2.8",
+    "babel-plugin-dynamic-import-node": "^1.0.2",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-require-ignore": "^0.1.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.24.1",
+    "babel-runtime": "~5.8.20",
+    "eslint": "^3.8.1",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-loader": "^1.6.0",
+    "eslint-plugin-import": "^2.7.0",
+    "jsdoc": "^3.5.4"
+  },
+  "scripts": {
+    "lint": "eslint **/*.js",
+    "doc": "jsdoc integrations -r -d ./docs/"
+  }
+}
