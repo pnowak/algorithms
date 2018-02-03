@@ -1,4 +1,4 @@
-export default function binarySearch(array, item) {
+export function binarySearch(array, item) {
 	let low = 0;
 	let high = array.length - 1;
 
@@ -12,36 +12,31 @@ export default function binarySearch(array, item) {
 
 		if (guess > item) {
 			high = mid - 1;
-		} 
+		}
 
 		if (guess < item) {
 			low = mid + 1;
 		}
 	}
 
-	return null;
+	return -1;
 }
 
-export default function binarySearchRec(array, item) {
-	let low = 0;
-	let high = array.length - 1;
-	let a;
-
+export function binarySearchRecursive(array, item, low = 0, high = array.length - 1) {
 	let mid = Math.floor((low + high) / 2);
 	let guess = array[mid];
 
 	if (guess === item) {
 		return mid;
-	} else if (guess > item) {
-		high = mid - 1;
-		a = array.splice(low, high);
-		binarySearchRec(a, item);
+	}
+
+	if (guess > item) {
+		binarySearchRec(array, item, low, mid - 1);
+
 	}  else if (guess < item) {
-		low = mid + 1;
-		a = array.splice(low, high);
-		binarySearchRec(a, item);
+		binarySearchRec(array, item, mid + 1, high);
+
 	} else {
-		return null;
+		return -1;
 	}
 }
-
