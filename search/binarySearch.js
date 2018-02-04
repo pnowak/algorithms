@@ -1,3 +1,8 @@
+/**
+ * @param {Array} array Input array.
+ * @param {Number} item Value of the element which index should be found.
+ * @returns {Number} Index of the element or -1 if not found.
+ */
 export function binarySearch(array, item) {
 	let low = 0;
 	let high = array.length - 1;
@@ -22,6 +27,13 @@ export function binarySearch(array, item) {
 	return -1;
 }
 
+/**
+ * @param {Array} array Input array.
+ * @param {Number} item Value of the element which index should be found.
+ * @param {Number} [low=0] Min start index.
+ * @param {Number} [high=array.length - 1] Max end index.
+ * @returns {Number} Index of the element or -1 if not found.
+ */
 export function binarySearchRecursive(array, item, low = 0, high = array.length - 1) {
 	if (low > high) {
 		return -1;
@@ -39,6 +51,5 @@ export function binarySearchRecursive(array, item, low = 0, high = array.length 
 
 	}  else if (guess < item) {
 		binarySearchRec(array, item, mid + 1, high);
-
 	}
 }
