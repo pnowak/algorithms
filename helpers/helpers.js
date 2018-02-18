@@ -33,14 +33,14 @@ export function removeItem(array, item) {
   }
 }
 
-export function smallestCost(array) {
+export function smallestCost(array, visited) {
   let smallest = Infinity;
   let nextGraph;
 
   for (let index = 0; index < array.length; index += 1) {
-    let item = array[index];
+    let item = array[index]; console.log(item);
 
-    if (item.cost < smallest) {
+    if (item.cost < smallest && !visited.includes(item.value)) {
       smallest = item.cost;
       nextGraph = item;
     }
