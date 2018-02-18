@@ -1,6 +1,5 @@
-const {
-  Graph
-} from ('@thejameskyle/itsy-bitsy-data-structures/itsy-bitsy-data-structures');
+import Graph from ('@thejameskyle/itsy-bitsy-data-structures/itsy-bitsy-data-structures');
+import findObjectByKey from 'helpers/helpers';
 
 export class WeightedGraph extends Graph {
   addNode(value) {
@@ -9,7 +8,7 @@ export class WeightedGraph extends Graph {
     let obj = findObjectByKey(this.nodes, 'value', value);
 
     return Object.assign(obj, {
-        cost: [value]
+        cost: []
     });
   }
 
@@ -19,16 +18,7 @@ export class WeightedGraph extends Graph {
     let startNode = this.find(startValue);
     let endNode = this.find(endValue);
 
-    startNode.cost.push(cost);
-    endNode.cost.push(cost);
+    startNode.cost.push([startValue, endValue, cost]);
+    endNode.cost.push([startValue, endValue, cost]);
   }
-}
-
-function findObjectByKey(array, key, value) {
-    for (let index = 0; index < array.length; index += 1) {
-        if (array[index][key] === value) {
-            return array[index];
-        }
-    }
-    return null;
 }

@@ -1,4 +1,4 @@
-const {
+import {
   Queue,
   Graph
 } from ('@thejameskyle/itsy-bitsy-data-structures/itsy-bitsy-data-structures');
