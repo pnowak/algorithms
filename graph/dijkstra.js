@@ -17,12 +17,12 @@ export function dijkstra(startNode, weightedGraph) {
 
     if (node.lines.length) {
       node.lines.forEach((item, index) => {
-        let newCost = findObjectByKey(keepTrack, 'value', item.value);
-        let findedCost = node.cost[index][2];
+        let findedCost = findObjectByKey(keepTrack, 'value', item.value);
+        let newCost = node.cost[index][2];
 
-        if (newCost.cost > findedCost) {
-          newCost.cost = findedCost;
-          newCost.prev = node.value;
+        if (newCost < findedCost.cost) {
+          findedCost.cost = newCost;
+          findedCost.prev = node.value;
         }
       });
     }

@@ -38,9 +38,9 @@ export function smallestCost(array, visited) {
   let nextGraph;
 
   for (let index = 0; index < array.length; index += 1) {
-    let item = array[index]; console.log(item);
+    let item = array[index];
 
-    if (item.cost < smallest && !visited.includes(item.value)) {
+    if (item.cost <= smallest && !visited.includes(item.value)) {
       smallest = item.cost;
       nextGraph = item;
     }
