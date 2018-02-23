@@ -1,3 +1,7 @@
+/**
+ * @param {Array} unsorted Unsorted array.
+ * @returns {Array} Sorted array.
+ */
 export default function insertionSort(unsorted) {
   for (let index = 0; index < unsorted.length; index += 1) {
     const currentElement = unsorted[index];
