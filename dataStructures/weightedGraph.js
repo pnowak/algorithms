@@ -1,5 +1,5 @@
 import Graph from ('@thejameskyle/itsy-bitsy-data-structures/itsy-bitsy-data-structures');
-import findObjectByKey from 'helpers/helpers';
+import findObjectByKey from './../helpers/helpers';
 
 export class WeightedGraph extends Graph {
   addNode(value) {

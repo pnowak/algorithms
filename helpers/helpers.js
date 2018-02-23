@@ -1,10 +1,10 @@
 export function findObjectByKey(array, key, value) {
   for (let index = 0; index < array.length; index += 1) {
-        if (array[index][key] === value) {
-            return array[index];
-        }
+    if (array[index][key] === value) {
+      return array[index];
     }
-    return null;
+  }
+  return null;
 }
 
 export function populateFromGraph(graph) {
@@ -38,7 +38,7 @@ export function smallestCost(array, visited) {
   let nextGraph;
 
   for (let index = 0; index < array.length; index += 1) {
-    let item = array[index];
+    const item = array[index];
 
     if (item.cost <= smallest && !visited.includes(item.value)) {
       smallest = item.cost;
@@ -47,4 +47,13 @@ export function smallestCost(array, visited) {
   }
 
   return nextGraph;
+}
+
+/**
+ * Swaps two values in an array.
+ * @param {int} firstIndex Index of first item to swap.
+ * @param {int} secondIndex Index of second item to swap.
+ */
+export function swap(firstIndex, secondIndex) {
+  return [secondIndex, firstIndex];
 }
